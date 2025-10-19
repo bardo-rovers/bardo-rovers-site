@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>مرحبا — Bardo Rovers</title>
+  <style>
+    :root{
+      --bg1: #0f172a;
+      --bg2: #0b1220;
+      --accent: #ffd166;
+      --muted: rgba(255,255,255,0.75);
+      font-family: "Segoe UI", Tahoma, "Helvetica Neue", Arial, sans-serif;
+    }
+    html,body{
+      height:100%;
+      margin:0;
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(255,209,102,0.06), transparent),
+                  linear-gradient(180deg,var(--bg1),var(--bg2));
+      color: white;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+    .wrap{
+      min-height:100%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:2rem;
+      box-sizing:border-box;
+    }
+    .card{
+      max-width:900px;
+      width:100%;
+      background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius:20px;
+      padding:2.2rem;
+      text-align:right;
+      box-shadow: 0 8px 30px rgba(2,6,23,0.6);
+    }
+    h1{
+      margin:0 0 .6rem 0;
+      font-size: clamp(1.4rem, 4.5vw, 3rem);
+      letter-spacing: .6px;
+      color: var(--accent);
+    }
+    p.lead{
+      margin:0 0 1.2rem 0;
+      font-size: clamp(1rem, 2.2vw, 1.25rem);
+      color: var(--muted);
+    }
+
+    /* typing/ellipsis effect for the waiting word */
+    .waiting {
+      display:inline-block;
+      font-weight:700;
+      margin-right: .4rem;
+      position: relative;
+    }
+    .dots{
+      display:inline-block;
+      width:1.2ch;
+      text-align:left;
+      vertical-align:bottom;
+    }
+    @keyframes blink {
+      0% {opacity:1}
+      50% {opacity:0.15}
+      100% {opacity:1}
+    }
+    .dots::after{
+      content: " ...";
+      animation: blink 1.2s infinite;
+      color: var(--accent);
+      font-weight:700;
+    }
+
+    /* small footer */
+    .meta{
+      margin-top:1.2rem;
+      font-size:.9rem;
+      color: rgba(255,255,255,0.35);
+    }
+
+    /* responsive */
+    @media (max-width:480px){
+      .card{ padding:1.2rem; border-radius:14px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card" role="main" aria-labelledby="welcome-title">
+      <h1 id="welcome-title">مرحبا بيكم في bardo rovers</h1>
+      <p class="lead">
+        <span class="waiting">انتضرون</span>
+        <span class="dots" aria-hidden="true"></span>
+      </p>
+
+      <p class="meta">
+        صفحة بسيطة جاهزة للرفع على GitHub — استعمل الملف هذا كـ <code>index.html</code>.
+      </p>
+    </div>
+  </div>
+</body>
+</html>
